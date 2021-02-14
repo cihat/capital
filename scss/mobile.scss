@@ -1,0 +1,15 @@
+html {
+  font-size: 8px;
+}
+
+.container-project {
+  display: flex;
+  flex-direction: column;
+
+  .info {
+    .container {
+      height: 100%;
+      
+    }
+  }
+}

@@ -3,8 +3,10 @@
 ```javascript
 // install dependencies
 npm install
+// run sass compiler
+npm run node-sass
 // run live-server
-npm run live-server
+live-server
 ```
 
 ## Description
