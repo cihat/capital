@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Medipol Hospital</title>
+    <title>Crowded Cities</title>
     <!-- reset.css -->
     <link rel="stylesheet" href="css/reset.css" />
     <!-- global.css -->
@@ -15,6 +15,39 @@
     <link rel="stylesheet" media="(max-width: 768px)" href="css/tablet.css" />
     <!-- mobile.css -->
     <link rel="stylesheet" media="(max-width: 500px)" href="css/mobile.css" />
+    <!-- leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  
+
   </head>
-  <body></body>
+
+  <body>
+    <div class="container-project">
+      <div class="info">
+        <div class="container">
+          <h1>most populous cities</h1>
+          <div class="input">
+            <label for="city-input"
+              >Please write the country you want to call !!!</label
+            >
+            <input type="text" name="" id="city-input" placeholder="Türkiye" />
+            <button>Find</button>
+          </div>
+          <div class="answer">
+            <h1>most populous city:</h1>
+            <div class="answer-container">
+              <h1 class="answer-city"><a href="#">İstanbul</a></h1>
+            </div>
+          </div>
+          <div class="author">
+            <a href="https://github.com/cihatdev/">@cihatdev</a></a>
+          </div>
+        </div>
+      </div>
+      <div id="map">
+      </div>
+    </div>
+  </body>
+  <script src="js/script.js"></script>
 </html>

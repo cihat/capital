@@ -1,7 +1,7 @@
 {
   "name": "crowded-cities",
   "version": "1.0.0",
-  "description": "",
+  "description": "```javascript npm install npm run scss ```",
   "main": "index.js",
   "scripts": {
     "scss": "node-sass --watch scss/ -o css/",
@@ -12,5 +12,13 @@
   "license": "ISC",
   "devDependencies": {
     "node-sass": "^5.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cihatdev/crowded-cities.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cihatdev/crowded-cities/issues"
+  },
+  "homepage": "https://github.com/cihatdev/crowded-cities#readme"
 }
