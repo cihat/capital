@@ -1,4 +1,4 @@
-# Crowded Cities
+# Capitals of Countries
 
 ```javascript
 // install dependencies
