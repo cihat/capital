@@ -4,5 +4,11 @@ html {
 .container-project {
   display: flex;
   flex-direction: column; }
-  .container-project .info .container {
-    height: 100%; }
+  .container-project .info {
+    flex: 1; }
+    .container-project .info .container {
+      max-height: calc(90vh);
+      height: calc(50vh);
+      max-width: calc(90vw); }
+  .container-project #map {
+    flex: 2; }

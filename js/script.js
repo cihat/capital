@@ -1,6 +1,7 @@
 const button = document.querySelector("#button");
 const input = document.querySelector("#city-input");
 const answerText = document.querySelector("#answerText");
+const mapElement = document.querySelector("#map");
 
 button.addEventListener("click", () => {
   const inputValue = input.value;
@@ -11,7 +12,7 @@ const logCountry = (data) => {
   console.log(data.latlng);
   console.log(data.capital);
   answerText.textContent = data.capital;
-  loadMap(data.latlng);
+  openPopUp(data.latlng);
 };
 
 const getCountryData = (country) => {
@@ -28,26 +29,14 @@ const getCountryData = (country) => {
 
 // console.log(getCountryData("Turkey"));
 
-const loadMap2 = (position) => {
-  const { latitude } = position.coords;
-  const { longitude } = position.coords;
-  console.log(position);
-  console.log(latitude, longitude);
-  console.log(position);
-  // leaflet
-  var map = L.map("map").setView([latitude, longitude], 6);
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    attribution:
-      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-  }).addTo(map);
-  L.marker([latitude, longitude])
-    .addTo(map)
-    .bindPopup("You're here")
-    .openPopup();
+const openPopUp = (position, check) => {
+  // L.marker(position).addTo(map).bindPopup("You're here").openPopup();
+  L.marker(position).addTo(mapElement).bindPopup("Capital").openPopup();
 };
 
-const loadMap = (position) => {
+const loadMap = (position, check = true) => {
   console.log(position);
+
   var map = L.map("map").setView(position, 6);
 
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -55,12 +44,31 @@ const loadMap = (position) => {
       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   }).addTo(map);
 
-  L.marker(position).addTo(map).bindPopup("You're here").openPopup();
+  L.marker(position)
+    .addTo(map)
+    .bindPopup(
+      L.popup({
+        maxWidth: 250,
+        minWidth: 100,
+        autoClose: false,
+        closeOnClick: false,
+      })
+    )
+    .setPopupContent(`You're here`)
+    .openPopup();
+};
+
+const convert = (value) => {
+  console.log(value);
+  const { latitude } = value.coords;
+  const { longitude } = value.coords;
+  console.log(latitude);
+  loadMap([latitude, longitude]);
 };
 
 const getPosition = () => {
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(loadMap2),
+    navigator.geolocation.getCurrentPosition(convert),
       () => {
         alert(`Could not get your position`);
       };
@@ -68,5 +76,3 @@ const getPosition = () => {
 };
 
 getPosition();
-
-// loadMap2("");

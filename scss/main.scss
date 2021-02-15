@@ -1,12 +1,12 @@
 // Font Google
-@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;700&display=swap");
 // Font Awesome
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 
 * {
   text-decoration: none;
   -webkit-overflow-scrolling: touch;
-  font-family: "Lobster", cursive;
+  font-family: "Mulish", sans-serif;
   &:focus {
     outline: 0;
   }
@@ -43,11 +43,9 @@
 
       h1 {
         letter-spacing: 0.2rem;
-        font-size: 2rem;
+        font-size: 2.4rem;
         text-transform: uppercase;
-        font-weight: 500;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
+        font-weight: bold;
       }
 
       .input {
@@ -56,7 +54,7 @@
         justify-content: flex-start;
         align-items: center;
         padding: 0.5rem;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
 
         label {
           margin-bottom: 0.5rem;
@@ -64,6 +62,12 @@
           letter-spacing: 0.1rem;
           font-weight: 500;
           cursor: pointer;
+        }
+
+        span {
+          margin-bottom: 1rem;
+          font-size: 1rem;
+          letter-spacing: 0.05rem;
         }
 
         input {
@@ -79,7 +83,7 @@
         button {
           width: 10rem;
           font-size: 2rem;
-          margin-bottom: 1rem;
+          margin-bottom: 0.5rem;
           cursor: pointer;
           padding: 0.9rem;
           border-radius: 4rem;

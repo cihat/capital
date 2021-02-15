@@ -7,9 +7,15 @@ html {
   flex-direction: column;
 
   .info {
+    flex: 1;
     .container {
-      height: 100%;
-      
+      max-height: calc(90vh);
+      height: calc(50vh);
+      max-width: calc(90vw);
     }
+  }
+
+  #map {
+    flex: 2;
   }
 }
