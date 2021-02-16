@@ -9,6 +9,12 @@ npm run node-sass
 live-server
 ```
 
+## Screenshots 
+![scrennshot-1](https://user-images.githubusercontent.com/57585087/108024545-d390ec80-7035-11eb-81cd-fb06eee4edf3.png)
+![scrennshot-2](https://user-images.githubusercontent.com/57585087/108024555-da1f6400-7035-11eb-8c0e-b78e87bd0427.png)
+
+
+
 ## Description
 
 This project is a project with very basic operations.
