@@ -33,7 +33,7 @@ In this project, I used the open-source leaflet map and the population API by ma
 ```javascript
 // install dependencies
 npm install
-//  
+//
 ```
 
 MIT License
