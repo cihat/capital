@@ -24,7 +24,7 @@ L.marker([39, 35])
       closeOnClick: false,
     })
   )
-  .setPopupContent(`Ankara 🌆`)
+  .setPopupContent(`Ankara🌆`)
   .openPopup();
 
 const loadMap = (data) => {
@@ -41,7 +41,7 @@ const loadMap = (data) => {
         closeOnClick: false,
       })
     )
-    .setPopupContent(`${data.capital} 🌇`)
+    .setPopupContent(`${data.capital}🌇`)
     .openPopup();
 
   map.panTo(data.latlng);
@@ -56,18 +56,19 @@ const convert = (value) => {
 const getCountryData = (country) => {
   if (country == "") {
     alert("Please write a country name. Do not leave blank !☢");
+  } else {
+    fetch(`https://restcountries.eu/rest/v2/name/${country}`)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        if (data.status === 404 || country == "") {
+          console.log(data.status);
+          alert("The country name you typed is incorrect.💥");
+        }
+        loadMap(data[0]);
+      });
   }
-  fetch(`https://restcountries.eu/rest/v2/name/${country}`)
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-      if (data.status === 404 || country == "") {
-        console.log(data.status);
-        alert("The country name you typed is incorrect.💥");
-      }
-      loadMap(data[0]);
-    });
 };
 
 //! addEventListener
