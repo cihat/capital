@@ -27,16 +27,13 @@ In this project, I used the open-source leaflet map and the population API by ma
   - [x] responsive
 - [ ] Create JavaScript structure
   - [x] import leaflet
-  - [x] import location api
-  - [x] import population api
+  - [x] location api
+  - [x] population api
 
 ```javascript
 // install dependencies
 npm install
-// run sass compiler
-npm run node-sass
-// run live-server
-live-server
+//  
 ```
 
 MIT License
