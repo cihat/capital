@@ -3,7 +3,7 @@ const input = document.querySelector("#city-input");
 const answerText = document.querySelector("#answerText");
 const mapElement = document.querySelector("#map");
 
-var map = L.map("map").setView([39, 35], 7, {
+var map = L.map("map").setView([39, 35], 4.5, {
   animate: true,
   pan: {
     duration: 1,
@@ -20,6 +20,8 @@ L.marker([39, 35])
     L.popup({
       maxWidth: 250,
       minWidth: 50,
+      autoClose: false,
+      closeOnClick: false,
     })
   )
   .setPopupContent(`Ankara 🌆`)
@@ -41,6 +43,8 @@ const loadMap = (data) => {
     )
     .setPopupContent(`${data.capital} 🌇`)
     .openPopup();
+
+  map.panTo(data.latlng);
 };
 
 const convert = (value) => {
@@ -49,43 +53,19 @@ const convert = (value) => {
   loadMap([latitude, longitude]);
 };
 
-const getPosition = () => {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(convert),
-      () => {
-        alert(`Could not get your position`);
-      };
-  }
-};
-
-getPosition();
-
-const showCity = (data) => {
-  console.log(data.latlng);
-  console.log(data.capital);
-  answerText.textContent = data.capital;
-  console.log(data.latlng);
-  L.marker(data.latlng)
-    .addTo(map)
-    .bindPopup(
-      L.popup({
-        maxWidth: 250,
-        minWidth: 50,
-        autoClose: false,
-        closeOnClick: false,
-      })
-    )
-    .setPopupContent(`Capital`)
-    .openPopup();
-};
-
 const getCountryData = (country) => {
+  if (country == "") {
+    alert("Please write a country name. Do not leave blank !☢");
+  }
   fetch(`https://restcountries.eu/rest/v2/name/${country}`)
     .then((response) => {
-      // console.log(response);
       return response.json();
     })
     .then((data) => {
+      if (data.status === 404 || country == "") {
+        console.log(data.status);
+        alert("The country name you typed is incorrect.💥");
+      }
       loadMap(data[0]);
     });
 };
@@ -94,4 +74,13 @@ const getCountryData = (country) => {
 button.addEventListener("click", () => {
   const inputValue = input.value;
   getCountryData(`${inputValue}`);
+  input.value = "";
+});
+
+input.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    const inputValue = input.value;
+    getCountryData(`${inputValue}`);
+    input.value = "";
+  }
 });

@@ -7,7 +7,7 @@ html {
   .container-project .info {
     flex: 1; }
     .container-project .info .container {
-      max-height: calc(90vh);
+      max-height: calc(30vh);
       height: calc(50vh);
       max-width: calc(90vw); }
   .container-project #map {

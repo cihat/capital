@@ -7,6 +7,10 @@
   *:focus {
     outline: 0; }
 
+body {
+  background: url(https://i.pinimg.com/originals/5c/3b/c8/5c3bc88cba99ca73c9c2c9344109a2a9.png) no-repeat;
+  background-size: cover; }
+
 .container-project {
   max-width: calc(100vw);
   height: calc(100vh);
@@ -15,12 +19,14 @@
   text-align: center;
   margin: auto; }
   .container-project .info {
+    background-color: rgba(255, 255, 255, 0.8);
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    align-items: center; }
+    align-items: center;
+    margin-right: 1rem; }
     .container-project .info .container {
       max-height: calc(90vh);
       height: calc(75vh);
@@ -67,7 +73,13 @@
           margin-bottom: 0.5rem;
           cursor: pointer;
           padding: 0.9rem;
-          border-radius: 4rem; }
+          border-radius: 4rem;
+          color: white;
+          background-color: #28a745; }
+          .container-project .info .container .input button:hover {
+            border: 1px solid #000;
+            color: black;
+            background-color: white; }
       .container-project .info .container .answer {
         display: flex;
         justify-content: center;
@@ -94,6 +106,7 @@
         margin-top: 1rem;
         margin-bottom: 1rem; }
         .container-project .info .container .author a {
-          font-size: 1.5rem; }
+          font-size: 1.5rem;
+          color: #000; }
   .container-project #map {
-    flex-grow: 7; }
+    flex-grow: 10; }

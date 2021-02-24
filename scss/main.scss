@@ -12,6 +12,12 @@
   }
 }
 
+body {
+  background: url(https://i.pinimg.com/originals/5c/3b/c8/5c3bc88cba99ca73c9c2c9344109a2a9.png)
+    no-repeat;
+  background-size: cover;
+}
+
 .container-project {
   max-width: calc(100vw);
   height: calc(100vh);
@@ -21,12 +27,14 @@
   margin: auto;
 
   .info {
+    background-color: rgba(#fff, 0.8);
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     align-items: center;
+    margin-right: 1rem;
     // border: 1px solid #000;
 
     .container {
@@ -87,9 +95,15 @@
           cursor: pointer;
           padding: 0.9rem;
           border-radius: 4rem;
+          color: white;
+          background-color: #28a745;
+          &:hover {
+            border: 1px solid #000;
+            color: black;
+            background-color: white;
+          }
         }
       }
-
       .answer {
         // border: 1px dashed #000;
         display: flex;
@@ -128,12 +142,13 @@
         margin-bottom: 1rem;
         a {
           font-size: 1.5rem;
+          color: #000;
         }
       }
     }
   }
 
   #map {
-    flex-grow: 7;
+    flex-grow: 10;
   }
 }
