@@ -1,18 +1,38 @@
+<script>
+import Input from "../components/Input";
+import Map from "../components/Map";
+export default {
+  data() {
+    return {
+      countryData: null,
+    };
+  },
+  components: {
+    Input,
+    Map,
+  },
+  methods: {
+    resData(data) {
+      this.countryData = data;
+      console.log(data);
+    },
+  },
+};
+</script>
+
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="home">
+    <Input @res-data="resData" />
+    <Map :countryAllData="countryData" />
   </div>
 </template>
-
-<script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
-export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
+<style lang="scss">
+#home {
+  max-width: calc(100vw);
+  height: calc(100vh);
+  padding: 1.5rem;
+  display: flex;
+  text-align: center;
+  margin: auto;
 }
-</script>
+</style>

@@ -1,30 +1,39 @@
+<script>
+export default {
+  name: "app",
+};
+</script>
+
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div id="app">
+    <router-view />
   </div>
-  <router-view/>
 </template>
 
 <style lang="scss">
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;700&display=swap");
+@import "./assets/css/reset.css";
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Mulish", sans-serif, Helvetica, Arial;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
 }
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+}
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+body {
+  background: url(https://user-images.githubusercontent.com/57585087/109042491-4f97ce00-76e1-11eb-82af-a9926eb08535.png)
+    no-repeat;
+  background-size: cover;
 }
 </style>
