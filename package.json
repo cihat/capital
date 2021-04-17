@@ -1,24 +1,24 @@
 {
-  "name": "crowded-cities",
-  "version": "1.0.0",
-  "description": "```javascript npm install npm run scss ```",
-  "main": "index.js",
+  "name": "capital",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "scss": "node-sass --watch scss/ -o css/",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "vue": "^3.0.0",
+    "vue-router": "^4.0.0-0",
+    "vuex": "^4.0.0-0"
+  },
   "devDependencies": {
-    "node-sass": "^5.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cihatdev/crowded-cities.git"
-  },
-  "bugs": {
-    "url": "https://github.com/cihatdev/crowded-cities/issues"
-  },
-  "homepage": "https://github.com/cihatdev/crowded-cities#readme"
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-vuex": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2"
+  }
 }
