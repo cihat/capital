@@ -3,6 +3,7 @@ export default {
   data() {
     return {
       input: "",
+      capital: null,
     };
   },
   methods: {
@@ -21,6 +22,7 @@ export default {
             }
             // this.emitData(data[0]);
             this.$emit("res-data", data[0]);
+            this.capital = data[0].capital;
           });
       }
     },
@@ -31,7 +33,6 @@ export default {
 <template>
   <div class="info">
     <div class="container" id="inputContanier">
-      <h1>Capitals</h1>
       <div class="input">
         <label for="city-input"
           >Please write the country you want to call !!!</label
@@ -51,7 +52,7 @@ export default {
         <h1>Capital:</h1>
         <div class="answer-container">
           <h1 class="answer-city" id="answerText">
-            <a href="#">{{ input }}</a>
+            <a href="#">{{ capital }}</a>
           </h1>
         </div>
       </div>
@@ -64,7 +65,7 @@ export default {
 
 <style scoped lang="scss">
 .info {
-  background-color: rgba(#fff, 0.8);
+  background-color: rgba(#fff, 0.95);
   flex-grow: 0.5;
   flex: 1;
   display: flex;
@@ -134,6 +135,7 @@ export default {
         border-radius: 4rem;
         color: white;
         background-color: #28a745;
+        border: 1px solid #fff;
         &:hover {
           border: 1px solid #000;
           color: black;

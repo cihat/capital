@@ -14,7 +14,6 @@ export default {
   methods: {
     resData(data) {
       this.countryData = data;
-      console.log(data);
     },
   },
 };
