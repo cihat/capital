@@ -12,7 +12,7 @@ export default {
 
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;700&display=swap");
-@import "./assets/css/reset.css";
+@import "./assets/scss/mobile.scss";
 
 #app {
   font-family: "Mulish", sans-serif, Helvetica, Arial;

@@ -80,25 +80,24 @@ export default {
   },
 
   methods: {
-    setupLeafletMap() {
-      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        attribution:
-          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-      }).addTo(this.mapDiv);
-
-      L.marker([39, 35])
-        .addTo(this.mapDiv)
-        .bindPopup(
-          L.popup({
-            maxWidth: 250,
-            minWidth: 50,
-            autoClose: false,
-            closeOnClick: false,
-          })
-        )
-        .setPopupContent(`Ankara🌆`)
-        .openPopup();
-    },
+    // setupLeafletMap() {
+    //   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    //     attribution:
+    //       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    //   }).addTo(this.mapDiv);
+    //   L.marker([39, 35])
+    //     .addTo(this.mapDiv)
+    //     .bindPopup(
+    //       L.popup({
+    //         maxWidth: 250,
+    //         minWidth: 50,
+    //         autoClose: false,
+    //         closeOnClick: false,
+    //       })
+    //     )
+    //     .setPopupContent(`Ankara🌆`)
+    //     .openPopup();
+    // },
   },
 };
 </script>
@@ -109,9 +108,9 @@ export default {
 
 <style scoped lang="scss">
 #map {
-  width: 80vw;
+  // width: 80vw;
   max-height: calc(95vh);
-
   flex-grow: 10;
+  flex: 18;
 }
 </style>

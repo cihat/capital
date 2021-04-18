@@ -30,7 +30,7 @@ export default {
 
 <template>
   <div class="info">
-    <div class="container">
+    <div class="container" id="inputContanier">
       <h1>Capitals</h1>
       <div class="input">
         <label for="city-input"
@@ -50,7 +50,9 @@ export default {
       <div class="answer">
         <h1>Capital:</h1>
         <div class="answer-container">
-          <h1 class="answer-city" id="answerText"><a href="#">Ankara</a></h1>
+          <h1 class="answer-city" id="answerText">
+            <a href="#">{{ input }}</a>
+          </h1>
         </div>
       </div>
       <div class="author">
@@ -63,7 +65,8 @@ export default {
 <style scoped lang="scss">
 .info {
   background-color: rgba(#fff, 0.8);
-  flex-grow: 1;
+  flex-grow: 0.5;
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -163,8 +166,8 @@ export default {
 
         h1 {
           a {
-            font-size: 3.5rem;
-            letter-spacing: 0.3rem;
+            font-size: 1.5rem;
+            letter-spacing: 0.1px;
             color: #000;
           }
         }

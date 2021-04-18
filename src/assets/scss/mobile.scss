@@ -1,0 +1,49 @@
+@media only screen and (max-width: 500px) {
+  html {
+    font-size: 12px;
+  }
+  .container-project {
+    display: flex;
+    flex-direction: column;
+
+    .info {
+      flex: 1;
+      .container {
+        max-height: calc(30vh);
+        height: calc(40vh);
+        max-width: calc(90vw);
+      }
+    }
+
+    #map {
+      flex: 3;
+    }
+  }
+  #home {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #inputContanier {
+    height: calc(50vh);
+    margin-top: 0;
+    margin-bottom: 0;
+
+    .answer {
+      h1 {
+        overflow-x: scroll;
+        margin: 0px;
+        padding: 0px;
+        a {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+
+  #map {
+    height: 100vh;
+    max-width: calc(90vw);
+    width: 100vw;
+  }
+}
